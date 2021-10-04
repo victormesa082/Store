@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Store.OnBoardingPage"
+             BackgroundColor="#21AF8F"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:local="clr-namespace:Store.Resource">
+    <ContentPage.Resources>
+
+        <Style TargetType="StackLayout">
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            
+        </Style>
+
+    </ContentPage.Resources>
+
+
+    <StackLayout Padding="10">
+
+        <Image Source="phonestore"/>
+
+        <StackLayout Spacing="30">
+            <Label Text="{x:Static local:AppResources.StoreLabel}"
+                FontAttributes="Bold"
+                FontSize="35"
+                HorizontalOptions="CenterAndExpand"
+                TextColor="White"/>
+
+            <Label Text="{x:Static local:AppResources.InfoLabel} "
+                FontSize="20"
+                TextColor="#D6F1EB"
+                LineHeight="1.1"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Center"/>
+
+            <StackLayout Padding="10">
+                <Button Text="{x:Static local:AppResources.StartButton}"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    TextColor="Black"
+                    BackgroundColor="White"
+                    CornerRadius="29"
+                    Padding="20"
+                    WidthRequest="300"
+                    Clicked="Button_Clicked"/>
+            </StackLayout>
+
+        </StackLayout>
+       
+    </StackLayout>
+
+</ContentPage>

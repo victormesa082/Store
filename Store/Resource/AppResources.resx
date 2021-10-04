@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+
+	<data name="StoreLabel" xml:space="preserve">
+		<value>Store</value>
+    </data>
+
+	<data name="InfoLabel" xml:space="preserve">
+		<value>Easier and cheaper than Amazon. Buy now and get 25% off.</value>
+    </data>
+
+	<data name="StartButton" xml:space="preserve">
+		<value>Get started</value>
+    </data>
+
+	<data name="Store" xml:space="preserve">
+		<value>Store</value>
+    </data>
+
+	<data name="MostPopular" xml:space="preserve">
+		<value>Most Popular</value>
+    </data>
+
+	<data name="TodaysDeals" xml:space="preserve">
+		<value>Today's Deals</value>
+    </data>
+
+	<data name="LatestTechnology" xml:space="preserve">
+		<value>Latest Technology</value>
+    </data>
+
+	<data name="iPhone" xml:space="preserve">
+		<value>iPhone</value>
+    </data>
+
+	<data name="Camera" xml:space="preserve">
+		<value>Camera</value>
+    </data>
+
+	<data name="Laptop" xml:space="preserve">
+		<value>Laptop</value>
+    </data>
+
+	<data name="PreOwned" xml:space="preserve">
+		<value>Pre-owned</value>
+    </data>
+
+	<data name="RelevanceButton" xml:space="preserve">
+		<value>Relevance</value>
+    </data>
+
+	<data name="FiltersButton" xml:space="preserve">
+		<value>Filters</value>
+    </data>
+
+</root>

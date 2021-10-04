@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Store.ProductDetail"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="Black"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView BackgroundColor="{Binding Background}" VerticalScrollBarVisibility="Never">
+
+    <RelativeLayout >
+
+    <StackLayout BackgroundColor="Black" Padding="30" Spacing="0" >
+
+        <StackLayout Orientation="Horizontal" >
+           
+               <Image Source="arrow"
+                      HorizontalOptions="Start">
+                   <Image.GestureRecognizers>
+                       <TapGestureRecognizer Command="{Binding ArrowGoBackCommand}"/>
+                   </Image.GestureRecognizers>
+               </Image>
+           
+            <Image Source="shoppingbagwhite"
+                   HorizontalOptions="EndAndExpand"/>
+        </StackLayout>
+            <Image Source="{Binding PictureName}"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"/>
+
+    </StackLayout>
+
+        <Frame
+            CornerRadius="30"
+            BackgroundColor="White"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X, Factor=0}"
+            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=460}"
+            HeightRequest="350"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+
+            <StackLayout>
+                  <Label Text="{Binding Title}"
+                         FontAttributes="Bold"
+                         FontSize="34"/>
+                <StackLayout Spacing="15">
+
+                  <Label Text="{Binding ProductPrice}"
+                         TextColor="#F2A14E"
+                         FontAttributes="Bold"
+                         FontSize="17"/>
+
+                  <Label Text="{Binding ProductDescription}"
+                         FontSize="14" />
+
+                  <Label Text="MOVEMENT"
+                        FontSize="12"
+                        FontAttributes="Bold"
+                        TextColor="#AFB1B7"/>
+                </StackLayout>
+
+            <StackLayout Spacing="20">
+                  <Label Text="{Binding Caracteristics}"
+                         FontSize="14"/>
+                <StackLayout Orientation="Horizontal" Spacing="14">
+
+                    <Image Source="staricon" WidthRequest="50" HorizontalOptions="Start"/>
+
+                    <Button Text="{Binding ButtonPurchase}"
+                            TextColor="White"
+                            FontSize="12"
+                            FontAttributes="Bold"
+                            WidthRequest="265"
+                            BackgroundColor="#763F00"
+                            />
+
+                </StackLayout>
+
+            </StackLayout>
+
+
+            </StackLayout>
+
+        </Frame>
+         
+    </RelativeLayout>
+     </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Store.HomePage"
+    Title="Home"
+    NavigationPage.HasNavigationBar="False"
+    xmlns:local="clr-namespace:Store.Resource">
+
+
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="Black"/>
+        </Style>
+        <Style TargetType="Frame">
+            <Setter Property="HasShadow" Value="False"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="CornerRadius" Value="20"/>
+            <Setter Property="IsClippedToBounds" Value="True"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+          <ScrollView VerticalScrollBarVisibility="Never">
+              
+                <StackLayout
+                    Padding="30,0,0,0"
+                    Spacing="30">
+
+                        <StackLayout
+                            Orientation="Horizontal"
+                            Spacing="20">
+                            <StackLayout.Padding>
+                                <OnPlatform x:TypeArguments="Thickness">
+                                    <On Platform="Android" Value="0,20,20,0"/>
+                                    <On Platform="iOS" Value="0,0,20,0"/>
+                                </OnPlatform>
+                            </StackLayout.Padding>
+
+                                <Image
+                                    Source="Menu"
+                                    HorizontalOptions="Start" />
+                                <Image
+                                    Source="Search"
+                                    HorizontalOptions="EndAndExpand"/>
+                                <Image
+                                    Source="shoppingbag"
+                                    HorizontalOptions="End"/>
+                        </StackLayout>
+
+                        <Label
+                            Text="{Binding Title}"
+                            FontAttributes="Bold"
+                            FontSize="45"/>
+
+                            <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+                                <StackLayout
+                                    Orientation="Horizontal"
+                                    Spacing="20">
+                                        <Label
+                                            Text="{Binding MostPopularSubtitle}"
+                                            FontAttributes="Bold"/>
+                                        <Label
+                                            Text="{Binding TodaysDealsSubtitle}"/>
+                                        <Label
+                                            Text="{Binding LatestTechnologySubtitle}"/>
+                                </StackLayout>
+                            </ScrollView>
+
+                        <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+                            <StackLayout BindableLayout.ItemsSource="{Binding Product}"
+                                            Orientation="Horizontal" Spacing="15">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackLayout>
+                                            <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                                                        Command="{Binding ProductDetailNavTap}"
+                                                        CommandParameter="{Binding .}"/>
+                                            </StackLayout.GestureRecognizers> 
+                                            <Frame>
+                                                <Image
+                                                    Source="{Binding ProductImage}"
+                                                    HeightRequest="170"
+                                                    WidthRequest="130">
+                                                </Image>    
+                                            </Frame>
+                                            <Label
+                                                Text="{Binding ProductName}"
+                                                FontAttributes="Bold"/>
+                                            <Label
+                                                Text="{Binding ProductPrice}"
+                                                FontSize="14"/>
+                                            <Label
+                                                Text="{Binding ProductColor}"
+                                                FontSize="14"/>
+                                               
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                       </ScrollView>
+
+                        <Label
+                            Text="{Binding LowerTitle}"
+                            FontAttributes="Bold"
+                            FontSize="20"/>
+
+                        <StackLayout
+                            Orientation="Horizontal"
+                            BindableLayout.ItemsSource="{Binding PreferenceButton}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                        <Button
+                                            Text="{Binding PreferenceButtonName}"
+                                            BackgroundColor="White"
+                                            TextColor="#E7D3AC"
+                                            BorderColor="#E7D3AC"
+                                            BorderWidth="2"
+                                            CornerRadius="15"
+                                            FontAttributes="Bold"
+                                            WidthRequest="160"/>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+
+                        <StackLayout BindableLayout.ItemsSource="{Binding LowerImage}"
+                                     Orientation="Horizontal">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout
+                                        Orientation="Horizontal">
+                                            <Frame>
+                                                <Image
+                                                    HeightRequest="250"
+                                                    WidthRequest="165"
+                                                    Source="{Binding LowerProductImage}"/>
+                                            </Frame>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                </StackLayout>
+          </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

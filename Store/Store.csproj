@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="1.2.0" />
+    <PackageReference Include="PropertyChanged.Fody" Version="3.4.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resource\" />
+    <None Remove="Xamarin.CommunityToolkit" />
+    <None Remove="Fody" />
+    <None Remove="PropertyChanged.Fody" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resource\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resource\AppResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resource\AppResources.Designer.cs">
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Tab.xaml.cs">
+      <DependentUpon>Tab.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="CartPage.xaml.cs">
+      <DependentUpon>CartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>
